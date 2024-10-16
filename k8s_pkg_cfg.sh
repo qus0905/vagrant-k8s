@@ -72,6 +72,11 @@ EOF
 # kubernetes version 
 sed -i 's/^kube_version: v1.26.11/kube_version: v1.26.5/g' /opt/kubespray-2.22-git/kubespray/inventory/hansem/group_vars/k8s_cluster/k8s-cluster.yml
 
+# config addons 
+sed -i 's/^metrics_server_enabled: false/metrics_server_enabled: true/g' /opt/kubespray-2.22-git/kubespray/inventory/hansem/group_vars/k8s_cluster/addons.yml
+sed -i 's/^ingress_nginx_enabled: false/ingress_nginx_enabled: true/g' /opt/kubespray-2.22-git/kubespray/inventory/hansem/group_vars/k8s_cluster/addons.yml
+sed -i 's/^enable_nodelocaldns: true/enable_nodelocaldns: false/g' /opt/kubespray-2.22-git/kubespray/inventory/hansem/group_vars/k8s_cluster/k8s-cluster.yml
+
 # ping test
 ansible -m ping -i /opt/kubespray-2.22-git/kubespray/inventory/hansem/inventory.ini all -f 1
 
