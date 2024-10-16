@@ -18,7 +18,7 @@ mkdir -p /opt/kubespray-2.22-git
 cd /opt/kubespray-2.22-git/
 git clone https://github.com/kubernetes-sigs/kubespray.git -b release-2.22
 
-# make python3 vevn
+# make python3 venv
 python3 -m venv /opt/kubespray-2.22-venv
 
 # activate venv
